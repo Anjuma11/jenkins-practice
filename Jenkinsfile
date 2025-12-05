@@ -1,24 +1,24 @@
 pipeline {
-    agent {
+    agent
 
-        stages {
-            stage('Build') {
-                steps {
-                    echo "building..."
-                }
+    stages {
+        stage('Build') {
+            steps {
+                echo "building..."
             }
-            stage('Test') {
-                steps {
-                    echo "testing..."
-                }
+        }
+        stage('Test') {
+            steps {
+                echo "testing..."
             }
-            stage('Deploy') {
-                steps {
-                    echo "deploying..."
-                }
+        }
+        stage('Deploy') {
+            steps {
+                echo "deploying..."
             }
         }
     }
+    
     post{
         always{
             echo "I will always say hello again"
