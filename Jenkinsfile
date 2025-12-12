@@ -11,13 +11,19 @@ pipeline {
         timeout(time: 10, unit: "SECONDS")
         disableConcurrentBuilds()
     }
+
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+    }
+
+
     stages {
         stage('Build') {
             steps {
                 script{
                     sh """
                     echo "building..."
-                    sleep 10
+                    echo "Hello ${params.PERSON}"
                     env
                     """
                 }
