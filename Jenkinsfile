@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent any{
+        label "AGENT-1"
+    }
     stages {
         stage('Build') {
             steps {
@@ -24,10 +26,10 @@ pipeline {
             deleteDir()
         }
         success{
-            echo "Hello Success"
+            echo "Hello Success..."
         }
         failure{
-            echo "Hello Failure"
+            echo "Hello Failure..."
         }
 
     }
