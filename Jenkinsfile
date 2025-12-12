@@ -10,9 +10,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "building..."
+                script{
+                    sh """
+                    echo "building..."
             
-                env
+                    env
+                    """
+                }
+                
             }
         }
         stage('Test') {
